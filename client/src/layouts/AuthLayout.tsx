@@ -15,8 +15,8 @@ export default function AuthLayout() {
 
   if (!allows.includes(path)) return <Notfound />;
   return (
-    <div className="fixed w-full h-full flex items-center justify-center ">
-      <div className=" border border-neutral-800 rounded-xl divide-y-2 divide-neutral-800 sm:min-w-md!">
+    <div className="fixed w-full h-full flex items-center justify-center overflow-y-auto">
+      <div className=" border border-neutral-800 rounded-xl divide-y-2 divide-neutral-800 sm:min-w-md! mx-4 mt-30 mb-10">
         {/* header */}
         <div className="flex items-center p-4">
           <div className="text-lg font-bold ">
