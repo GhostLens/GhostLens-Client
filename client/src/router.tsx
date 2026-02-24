@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router";
-import Index from "./pages/Index.tsx";
 import Notfound from "./pages/Notfound.tsx";
 import Login from "./pages/auth/Login.tsx";
 import DashboardLayout from "./layouts/DashboardLayout.tsx";
@@ -7,6 +6,7 @@ import AuthLayout from "./layouts/AuthLayout.tsx";
 import MainLayout from "./layouts/MainLayout.tsx";
 import Register from "./pages/auth/Register.tsx";
 import Recovery from "./pages/auth/Recovery.tsx";
+import Dashboard from "./pages/dashboard/Dashboard.tsx";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            Component: Index,
+            Component: Dashboard,
           },
         ],
       },
