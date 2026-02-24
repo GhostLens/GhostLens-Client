@@ -6,6 +6,7 @@ import DashboardLayout from "./layouts/DashboardLayout.tsx";
 import AuthLayout from "./layouts/AuthLayout.tsx";
 import MainLayout from "./layouts/MainLayout.tsx";
 import Register from "./pages/auth/Register.tsx";
+import Recovery from "./pages/auth/Recovery.tsx";
 
 const router = createBrowserRouter([
   {
@@ -17,20 +18,21 @@ const router = createBrowserRouter([
         Component: Notfound,
       },
       {
+        path: "auth",
+        Component: AuthLayout,
+        children: [
+          { path: "login", index: true, Component: Login },
+          { path: "register", Component: Register },
+          { path: "recovery", Component: Recovery },
+        ],
+      },
+      {
         path: "dashboard",
         Component: DashboardLayout,
         children: [
           {
             index: true,
             Component: Index,
-          },
-          {
-            path: "auth",
-            Component: AuthLayout,
-            children: [
-              { path: "login", Component: Login },
-              { path: "register", Component: Register },
-            ],
           },
         ],
       },

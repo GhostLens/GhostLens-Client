@@ -1,6 +1,6 @@
 {
   "register": {
-    "header_title": "Dashboard Registration",
+    "header_title": "Account Registration",
     "page_title": "GhostLens - Register",
     "username": {
       "placeholder": "John doe",
@@ -26,7 +26,7 @@
     }
   },
   "login": {
-    "header_title": "Dashboard Login",
+    "header_title": "Account Login",
     "page_title": "GhostLens - Login",
     "username": {
       "placeholder": "John doe",
@@ -34,8 +34,33 @@
     },
     "password": {
       "placeholder": "Enter your password",
-      "label": "Password",
+      "label": "Password"
+    },
+
+    "buttons": {
+      "login": "Login"
+    }
+  },
+  "recovery": {
+    "header_title": "Account Recovery",
+    "page_title": "GhostLens - Recovery",
+    "new_password": {
+      "placeholder": "Enter your new password",
+      "label": "New password",
       "description": "More than 8 characters"
+    },
+    "repeat_password": {
+      "label": "Confirm new password",
+      "placeholder": "Enter your new password again"
+    },
+    "recovery_code": {
+      "label": "Recovery code",
+      "placeholder": "Enter your recovery code",
+      "description": "The recovery code you created when you registered."
+    },
+
+    "buttons": {
+      "recovery": "Change password"
     }
   }
 }
