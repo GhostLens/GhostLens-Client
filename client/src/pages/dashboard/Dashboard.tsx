@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import DashboardStatusCards from "../../components/Cards/DashboardStatusCards";
 import { Button } from "antd";
 import { BiConversation } from "react-icons/bi";
+import { BsReverseListColumnsReverse } from "react-icons/bs";
 
 export default function Dashboard() {
   const { t } = useTranslation();
@@ -22,7 +23,7 @@ export default function Dashboard() {
             <DashboardStatusCards />
           </div>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center gap-x-2">
           <Button
             type="default"
             classNames={{
@@ -33,6 +34,24 @@ export default function Dashboard() {
           >
             {t("dashboard.buttons.chats")}
           </Button>
+          <Button
+            type="default"
+            classNames={{
+              root: "bg-gray-400! hover:bg-gray-500! transition-all! focus:bg-gray-500! text-neutral-100! border-0! text-sm!",
+            }}
+            icon={<BsReverseListColumnsReverse size={16} />}
+            size={"medium"}
+          >
+            {t("dashboard.buttons.logs")}
+          </Button>
+        </div>
+        <div className="border border-neutral-800 rounded-xl divide-y divide-neutral-800 overflow-hidden">
+          {/* header */}
+          <div className="p-4 text-lg font-bold bg-neutral-800">
+            {t("dashboard.chat_history.header_title")}
+          </div>
+          {/* content */}
+          <div className="p-4">{/* <DashboardStatusCards /> */}</div>
         </div>
       </div>
     </div>

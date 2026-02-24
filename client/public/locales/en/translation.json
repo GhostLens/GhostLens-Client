@@ -87,8 +87,12 @@
         }
       }
     },
+    "chat_history": {
+        "header_title": "Chat history"
+    },
     "buttons": {
-      "chats": "Chats"
+      "chats": "Chats",
+      "logs": "Logs"
     }
   }
 }
