@@ -62,7 +62,9 @@ export default function DashboardStatusCards() {
             <span>12</span>
           </div>
           <div className="flex gap-1 text-sm items-center justify-between">
-            <span>{t("dashboard.statusbar.cards.chats.messages_received")}</span>
+            <span>
+              {t("dashboard.statusbar.cards.chats.messages_received")}
+            </span>
             <span>12</span>
           </div>
         </div>
@@ -84,21 +86,25 @@ export default function DashboardStatusCards() {
         {/* content */}
         <div className="flex flex-col leading-relaxed">
           <div className="flex gap-1 text-sm items-center justify-between">
-            <span>{t("dashboard.statusbar.cards.subscription.amount_paid")}</span>
+            <span>
+              {t("dashboard.statusbar.cards.subscription.amount_paid")}
+            </span>
             <span>12</span>
           </div>
           <div className="flex gap-1 text-sm items-center justify-between">
-            <span>{t("dashboard.statusbar.cards.subscription.remaining_time")}</span>
+            <span>
+              {t("dashboard.statusbar.cards.subscription.remaining_time")}
+            </span>
             <span>12</span>
           </div>
           <div className="flex gap-1 text-sm items-center justify-between">
-            <span>{t("dashboard.statusbar.cards.subscription.data_capacity")}</span>
+            <span>
+              {t("dashboard.statusbar.cards.subscription.data_capacity")}
+            </span>
             <span>12/30 GB</span>
           </div>
         </div>
       </div>
-
-
     </div>
   );
 }

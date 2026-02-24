@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next";
 import DashboardStatusCards from "../../components/Cards/DashboardStatusCards";
+import { Button } from "antd";
+import { BiConversation } from "react-icons/bi";
 
 export default function Dashboard() {
   const { t } = useTranslation();
@@ -19,6 +21,18 @@ export default function Dashboard() {
           <div className="p-4">
             <DashboardStatusCards />
           </div>
+        </div>
+        <div className="flex items-center">
+          <Button
+            type="default"
+            classNames={{
+              root: "bg-blue-400! hover:bg-blue-500! transition-all! focus:bg-blue-500! text-neutral-100! border-0! text-sm!",
+            }}
+            icon={<BiConversation size={16} />}
+            size={"medium"}
+          >
+            {t("dashboard.buttons.chats")}
+          </Button>
         </div>
       </div>
     </div>

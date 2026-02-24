@@ -86,6 +86,9 @@
           "data_capacity": "Data capacity"
         }
       }
+    },
+    "buttons": {
+      "chats": "Chats"
     }
   }
 }
