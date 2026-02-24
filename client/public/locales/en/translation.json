@@ -62,5 +62,30 @@
     "buttons": {
       "recovery": "Change password"
     }
+  },
+  "dashboard": {
+    "statusbar": {
+      "header_title": "Status overview",
+      "cards": {
+        "data": {
+          "title": "Data",
+          "extracted": "Extracted data",
+          "recorded": "Recorded data",
+          "queued": "Queued data"
+        },
+        "chats": {
+          "title": "Chats",
+          "all": "Created chats",
+          "sent_messages": "Sent messages",
+          "messages_received": "Messages received"
+        },
+        "subscription": {
+          "title": "Subscription",
+          "amount_paid": "Amount paid",
+          "remaining_time": "Remaining time",
+          "data_capacity": "Data capacity"
+        }
+      }
+    }
   }
 }
