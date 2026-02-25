@@ -135,5 +135,30 @@
         "save_changes": "Save changes"
       }
     }
+  },
+  "telegram": {
+    "login": {
+      "page_title": "GhostLens - Telegram login",
+      "phone_number": {
+        "label": "Phone number",
+        "placeholder": "+1234567890",
+        "description": "Enter your phone number with country code"
+      },
+      "verify_code": {
+        "label": "Verify code",
+        "description": "Enter the code you received on Telegram here."
+      },
+      "two_step": {
+        "label": "Two-step verification",
+        "placeholder": "Code...",
+        "description": "Enter your Telegram two-step verification code here."
+      },
+
+      "buttons": {
+        "send_code": "Send code",
+        "login": "Verify & Login Account",
+        "complete_login": "Complete login"
+      }
+    }
   }
 }

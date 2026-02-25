@@ -7,6 +7,10 @@ import MainLayout from "./layouts/MainLayout.tsx";
 import Register from "./pages/auth/Register.tsx";
 import Recovery from "./pages/auth/Recovery.tsx";
 import Dashboard from "./pages/dashboard/Dashboard.tsx";
+import AccountLogin from "./pages/account/Login.tsx";
+import AccountLayout from "./layouts/AccountLayout.tsx";
+import VerifyCode from "./pages/account/VerifyCode.tsx";
+import TwoFactor from "./pages/account/Twofactor.tsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +20,21 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Notfound,
+      },
+      {
+        path: "account",
+        Component: AccountLayout,
+        children: [
+          {
+            path: "login",
+            // Component: AccountLogin,
+            children: [
+              { Component: AccountLogin, index: true },
+              { path: "verify", Component: VerifyCode },
+              { path: "two-step", Component: TwoFactor },
+            ],
+          },
+        ],
       },
       {
         path: "auth",
