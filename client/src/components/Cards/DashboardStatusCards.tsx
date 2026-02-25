@@ -16,7 +16,7 @@ export default function DashboardStatusCards() {
         {/* icon + title */}
         <div className="flex gap-x-2 items-center">
           <TbBrandDatabricks size={24} />
-          <div className="text-md font-bold text-neutral-100">
+          <div className="text-md font-bold text-neutral-100 pt-1">
             {t("dashboard.statusbar.cards.data.title")}
           </div>
         </div>
@@ -46,7 +46,7 @@ export default function DashboardStatusCards() {
         {/* icon + title */}
         <div className="flex gap-x-2 items-center">
           <BiConversation size={24} />
-          <div className="text-md font-bold text-neutral-100">
+          <div className="text-md font-bold text-neutral-100 pt-1">
             {t("dashboard.statusbar.cards.chats.title")}
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function DashboardStatusCards() {
         {/* icon + title */}
         <div className="flex gap-x-2 items-center">
           <TbPremiumRights size={24} />
-          <div className="text-md font-bold text-neutral-100">
+          <div className="text-md font-bold text-neutral-100 pt-1">
             {t("dashboard.statusbar.cards.subscription.title")}
           </div>
         </div>

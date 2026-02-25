@@ -88,11 +88,52 @@
       }
     },
     "chat_history": {
-        "header_title": "Chat history"
+      "header_title": "Chat history"
     },
     "buttons": {
       "chats": "Chats",
       "logs": "Logs"
+    },
+    "accounts": {
+      "title": "Accounts",
+      "add_account": "Add a Telegram account"
+    },
+    "security": {
+      "title": "Security",
+      "change_password": "Change password",
+      "change_apikey": "Change API key",
+      "logout_all": "Log out and delete all sessions"
+    },
+    "api": {
+      "title": "Api",
+      "add_apikey": "Add your API key"
+    },
+    "extraction": {
+      "title": "Extraction settings",
+      "request_interval": {
+        "label": "Request interval (Seconds)",
+        "placeholder": "e.g: 2",
+        "description": "The time the system waits after each message is received. Increasing this number greatly reduces the risk of rate limits from Telegram. Recommended value: 2 seconds"
+      },
+      "messages_per_request": {
+        "label": "Messages per request",
+        "placeholder": "e.g: 100",
+        "description": "The number of messages received from Telegram per request. Telegram has a limit of 100 messages. Setting it to a lower number increases account security in crowded groups."
+      },
+      "chunk_size": {
+        "label": "Upload chunk size (MB)",
+        "placeholder": "e.g: 1",
+        "description": "Splits the extracted data into smaller files before uploading to the server recommended: 1MD for unstable connections"
+      },
+      "auto_pause": {
+        "label": "Auto-pause on flood error",
+        "placeholder": "",
+        "description": "If enabled, the client will automatically pause extraction when telegram's rate limit is reached and resume after the required wait time"
+      },
+
+      "buttons": {
+        "save_changes": "Save changes"
+      }
     }
   }
 }
