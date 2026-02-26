@@ -1,10 +1,8 @@
-import { useTranslation } from "react-i18next";
 import { Outlet, useLocation } from "react-router";
 import Notfound from "../pages/Notfound";
 import { useState } from "react";
 
 export default function AccountLayout() {
-  const { t } = useTranslation();
   const { pathname } = useLocation();
   const [allows] = useState(["login", "verify","two-step"]);
 
@@ -19,7 +17,7 @@ export default function AccountLayout() {
       <div className=" border border-neutral-800 rounded-xl divide-y-2 divide-neutral-800 sm:min-w-md! mx-4 mt-30 mb-10">
         {/* header */}
         <div className="flex items-center p-4">
-          <div className="text-lg font-bold ">Telgram Account login</div>
+          <div className="text-lg font-bold ">Telegram Account login</div>
         </div>
         {/* content */}
         <div className="p-4">

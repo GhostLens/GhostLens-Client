@@ -88,10 +88,12 @@
       }
     },
     "chat_history": {
-      "header_title": "Chat history"
+      "header_title": "Chat history overview"
     },
     "buttons": {
-      "chats": "Chats",
+      "profile": "Your profile",
+      "ghostlens_chats": "Ghostlens chats",
+      "telegram_chats": "Telegram chats",
       "logs": "Logs"
     },
     "accounts": {
@@ -106,7 +108,11 @@
     },
     "api": {
       "title": "Api",
-      "add_apikey": "Add your API key"
+      "add_apikey": "Add your API key",
+      "buttons": {
+        "check_api_connect": "Check api connect",
+        "check_telegram_connect": "Check telegram connect"
+      }
     },
     "extraction": {
       "title": "Extraction settings",
@@ -134,6 +140,41 @@
       "buttons": {
         "save_changes": "Save changes"
       }
+    },
+    "activity": {
+      "header_title": "Activity overview"
+    }
+  },
+  "activity": {
+    "progress": "Progress",
+    "activity_titles": {
+      "new_extraction": "New Extraction"
+    },
+    "target_chat_title": "Target chat title",
+    "target_chat_id": "Target chat id",
+    "all_messages": "All chat messages",
+    "extracted_messages": "Extracted messages",
+    "error_cause": "Error cause",
+    "notfound_error": "No errors found.",
+    "see_logs": "See logs",
+    "new_ghostlens_chat": "New ghostlens chat",
+    "see_telegram_chats": "See telegram chats",
+    "cancel": "Cancel",
+    "pause": "Pause",
+    "resume": "Resume",
+    "settings": "Settings",
+    "extracting_from": "Extracting from"
+  },
+  "chat_history": {
+    "options": {
+      "edit_chat": "Edit chat",
+      "delete_chat": "Delete chat"
+    }
+  },
+  "user_account": {
+    "options": {
+      "telegram_chats": "Telegram chats",
+      "logout": "Logout"
     }
   },
   "telegram": {
@@ -159,6 +200,33 @@
         "login": "Verify & Login Account",
         "complete_login": "Complete login"
       }
+    }
+  },
+  "shared": {
+    "see_more": "See more"
+  },
+
+  "modal": {
+    "titles": {
+      "add_apikey": "Add API Key",
+      "delete_apikey": "Delete API Key",
+      "select_account": "Select an account"
+    },
+
+    "dialogs": {
+      "delete_apikey": "Are you sure you want to remove the API key from the client?"
+    },
+
+    "inputs": {
+      "add_apikey": {
+        "placeholder": "Enter your API Key..."
+      }
+    },
+
+    "buttons": {
+      "submit": "Submit",
+      "delete": "Delete",
+      "cancel": "Cancel"
     }
   }
 }
