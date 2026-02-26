@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 import { Button, Input } from "antd";
+import { Link } from "react-router";
 
 export default function Recovery() {
   const { t } = useTranslation();
@@ -62,15 +63,28 @@ export default function Recovery() {
           </div>
         </div>
 
-        <Button
-          type="default"
-          classNames={{
-            root: "bg-green-400! hover:bg-green-500! transition-all! focus:bg-green-500! text-neutral-100! border-0!",
-          }}
-          size={"large"}
-        >
-          {t("recovery.buttons.recovery")}
-        </Button>
+        <div className="grid grid-cols-2  gap-x-2">
+          <Button
+            type="default"
+            classNames={{
+              root: "bg-green-400! hover:bg-green-500! transition-all! focus:bg-green-500! text-neutral-100! border-0! w-full!",
+            }}
+            size={"large"}
+          >
+            {t("recovery.buttons.recovery")}
+          </Button>
+          <Link to="/dashboard" className="w-full!">
+            <Button
+              type="default"
+              classNames={{
+                root: "bg-transparent! border border-neutral-700! hover:border-neutral-800! transition-all! focus:border-neutral-800! text-neutral-100!  w-full!",
+              }}
+              size={"large"}
+            >
+              {t("shared.dashboard")}
+            </Button>
+          </Link>
+        </div>
       </form>
     </div>
   );

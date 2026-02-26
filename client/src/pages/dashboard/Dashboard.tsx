@@ -67,6 +67,7 @@ export default function Dashboard() {
         </div>
         <div className="flex items-center gap-x-2 flex-wrap gap-y-1">
           <div className="flex md:hidden">
+            <Link to="/profile">
             <Button
               type="default"
               classNames={{
@@ -76,7 +77,7 @@ export default function Dashboard() {
               size={"medium"}
             >
               {t("dashboard.buttons.profile")}
-            </Button>
+            </Button></Link>
           </div>
           <Button
             type="default"

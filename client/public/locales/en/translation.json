@@ -203,7 +203,9 @@
     }
   },
   "shared": {
-    "see_more": "See more"
+    "see_more": "See more",
+    "dashboard": "Dashboard",
+    "back_to_dashboard": "Back to dashboard"
   },
 
   "modal": {

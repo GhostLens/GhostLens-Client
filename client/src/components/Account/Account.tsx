@@ -43,7 +43,7 @@ export default function Account() {
           >
             {t("dashboard.security.change_password")}
           </Link>
-          <Link
+          {/* <Link
             to="/auth/recovery"
             className="text-sm text-blue-400 hover:text-blue-500 focus:text-blue-500 transition-all"
           >
@@ -54,7 +54,7 @@ export default function Account() {
             className="text-sm text-blue-400 hover:text-blue-500 focus:text-blue-500 transition-all"
           >
             {t("dashboard.security.logout_all")}
-          </Link>
+          </Link> */}
         </div>
       </div>
 
