@@ -143,12 +143,28 @@
     },
     "activity": {
       "header_title": "Activity overview"
+    },
+
+    "page_title": {
+      "dashboard": "Dashboard",
+      "activity": "Activity"
     }
   },
+  "profile": {
+    "page_title": "GhostLens - Profile",
+    "title": "Profile"
+  },
   "activity": {
+    "title": "Activity",
     "progress": "Progress",
     "activity_titles": {
       "new_extraction": "New Extraction"
+    },
+    "status": {
+      "DONE": "Done",
+      "ACTIVE": "Active",
+      "PAUSE": "Pause",
+      "ERROR": "Error"
     },
     "target_chat_title": "Target chat title",
     "target_chat_id": "Target chat id",
@@ -159,6 +175,7 @@
     "see_logs": "See logs",
     "new_ghostlens_chat": "New ghostlens chat",
     "see_telegram_chats": "See telegram chats",
+    "status_title": "Status",
     "cancel": "Cancel",
     "pause": "Pause",
     "resume": "Resume",
@@ -205,7 +222,9 @@
   "shared": {
     "see_more": "See more",
     "dashboard": "Dashboard",
-    "back_to_dashboard": "Back to dashboard"
+    "back_to_dashboard": "Back to dashboard",
+    "empty": "Oh, nothing found. Apparently this place is empty.",
+    "empty_dialog_2": "The following options may be able to help you."
   },
 
   "modal": {

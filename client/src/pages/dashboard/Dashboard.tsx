@@ -1,21 +1,24 @@
 import { useTranslation } from "react-i18next";
 import DashboardStatusCards from "../../components/Cards/DashboardStatusCards";
-import { Button, Dropdown, Progress, type MenuProps } from "antd";
+import { Button, Dropdown, type MenuProps } from "antd";
 import { BiConversation } from "react-icons/bi";
 import { BsReverseListColumnsReverse } from "react-icons/bs";
 import { TbDots } from "react-icons/tb";
-import { LuChevronDown } from "react-icons/lu";
 import { Link } from "react-router";
 import { LiaTelegram } from "react-icons/lia";
 import Account from "../../components/Account/Account";
 import { CiUser } from "react-icons/ci";
 import { useRef } from "react";
 import { useModalStore } from "../../store/modal.store";
+import { useActiviyStore } from "../../store/activity.store";
+import ActivityItemCard from "../../components/Activity/ActivityItemCard";
+import Empty from "../../Empty/Empty";
 
 export default function Dashboard() {
   const { t } = useTranslation();
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
   const { setOpenSelectAccount } = useModalStore();
+  const { activities } = useActiviyStore();
 
   const items: MenuProps["items"] = [
     {
@@ -36,10 +39,10 @@ export default function Dashboard() {
     },
   ];
 
-  const toggleActivityItem = (index: number) => {
-    contentRefs.current.forEach((el, i) => {
+  const toggleActivityItem = (id: string) => {
+    contentRefs.current.forEach((el) => {
       if (el) {
-        if (i === index) {
+        if (el.parentElement?.getAttribute("id") === id) {
           el.classList.toggle("hidden");
         } else {
           el.classList.add("hidden");
@@ -68,16 +71,17 @@ export default function Dashboard() {
         <div className="flex items-center gap-x-2 flex-wrap gap-y-1">
           <div className="flex md:hidden">
             <Link to="/profile">
-            <Button
-              type="default"
-              classNames={{
-                root: "bg-emerald-400! hover:bg-emerald-500! transition-all! focus:bg-emerald-500! text-neutral-100! border-0! text-sm!",
-              }}
-              icon={<CiUser size={16} />}
-              size={"medium"}
-            >
-              {t("dashboard.buttons.profile")}
-            </Button></Link>
+              <Button
+                type="default"
+                classNames={{
+                  root: "bg-emerald-400! hover:bg-emerald-500! transition-all! focus:bg-emerald-500! text-neutral-100! border-0! text-sm!",
+                }}
+                icon={<CiUser size={16} />}
+                size={"medium"}
+              >
+                {t("dashboard.buttons.profile")}
+              </Button>
+            </Link>
           </div>
           <Button
             type="default"
@@ -116,7 +120,7 @@ export default function Dashboard() {
           <div className="p-4 text-lg font-bold bg-neutral-800 flex justify-between items-center">
             <span>{t("dashboard.activity.header_title")}</span>
             <Link
-              to="/"
+              to="/dashboard/activity"
               className="text-sm text-blue-400 hover:text-blue-500 focus:text-blue-500 transition-all"
             >
               {t("shared.see_more")}
@@ -124,152 +128,13 @@ export default function Dashboard() {
           </div>
           {/* activities */}
           <div className="p-4 flex flex-col gap-2">
-            {/* activity item */}
-            <div className="border border-neutral-800 rounded-lg px-4 py-2 flex flex-col ">
-              {/* header */}
-              <div
-                className="flex items-center justify-between gap-x-4"
-                onClick={() => toggleActivityItem(0)}
-              >
-                {/* title + progressbar */}
-                <div className="flex flex-col gap-1 w-full">
-                  <div className="line-clamp-2 text-lg font-medium text-neutral-300">
-                    {t("activity.activity_titles.new_extraction")}: chat title
-                  </div>
-                  <div className="flex items-center gap-x-1 min-w-full">
-                    <div className="text-sm font-light text-neutral-400">
-                      {t("activity.progress")}:
-                    </div>
-                    <Progress
-                      percent={50}
-                      classNames={{
-                        indicator:
-                          "text-neutral-300! text-xs! [&>span.anticon-check-circle>svg]:text-green-400! [&>span.anticon-check-circle>svg]:scale-[1.2] [&>span.anticon-close-circle>svg]:text-red-400! [&>span.anticon-close-circle>svg]:scale-[1.2]",
-                        // root: "max-w-xs",
-                        rail: "bg-neutral-800!",
-                      }}
-                      status="exception"
-                    />
-                  </div>
-                </div>
-
-                {/* chevron icon */}
-                <div className="">
-                  <LuChevronDown size={16} />
-                </div>
-              </div>
-
-              {/* content */}
-              <div
-                className="flex flex-wrap gap-x-6 pt-2 gap-y-4 border-t border-neutral-800 mt-2 hidden"
-                ref={(e) => {
-                  contentRefs.current[0] = e;
-                }}
-              >
-                <div className="flex flex-col gap-y-1">
-                  <div className="flex items-center gap-x-1">
-                    <div className="text-sm text-neutral-400">
-                      {t("activity.target_chat_title")}:
-                    </div>
-                    <div className="text-sm">test</div>
-                  </div>
-                  <div className="flex items-center gap-x-1">
-                    <div className="text-sm text-neutral-400">
-                      {t("activity.target_chat_id")}:
-                    </div>
-                    <div className="text-sm">12345679</div>
-                  </div>
-                  <div className="flex items-center gap-x-1">
-                    <div className="text-sm text-neutral-400">
-                      {t("activity.all_messages")}:
-                    </div>
-                    <div className="text-sm">45343</div>
-                  </div>
-                  <div className="flex items-center gap-x-1">
-                    <div className="text-sm text-neutral-400">
-                      {t("activity.extracted_messages")}:
-                    </div>
-                    <div className="text-sm">123</div>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-y-1">
-                  <div className="flex items-center gap-x-1">
-                    <div className="text-sm text-neutral-400">
-                      {t("activity.error_cause")}:
-                    </div>
-                    <div className="text-sm">
-                      {t("activity.notfound_error")}
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-x-1">
-                    <div className="text-sm text-neutral-400">
-                      {t("activity.extracting_from")}:
-                    </div>
-                    <div className="text-sm">User full name</div>
-                  </div>
-
-                  <div className="flex items-center gap-x-1">
-                    <Link
-                      to=""
-                      className="text-sm text-blue-400 hover:text-blue-500 focus:text-blue-500 transition-all"
-                    >
-                      {t("activity.new_ghostlens_chat")}
-                    </Link>
-                  </div>
-                  <div className="flex items-center gap-x-1">
-                    <Link
-                      to=""
-                      className="text-sm text-blue-400 hover:text-blue-500 focus:text-blue-500 transition-all"
-                    >
-                      {t("activity.see_telegram_chats")}
-                    </Link>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-y-1">
-                  <div className="flex items-center gap-x-1">
-                    <Link
-                      to=""
-                      className="text-sm text-blue-400 hover:text-blue-500 focus:text-blue-500 transition-all"
-                    >
-                      {t("activity.see_logs")}
-                    </Link>
-                  </div>
-                  <div className="flex items-center gap-x-1">
-                    <Link
-                      to=""
-                      className="text-sm text-blue-400 hover:text-blue-500 focus:text-blue-500 transition-all"
-                    >
-                      {t("activity.settings")}
-                    </Link>
-                  </div>
-                  <div className="flex items-center gap-x-1">
-                    <Link
-                      to=""
-                      className="text-sm text-blue-400 hover:text-blue-500 focus:text-blue-500 transition-all"
-                    >
-                      {t("activity.pause")}
-                    </Link>
-                  </div>
-                  <div className="flex items-center gap-x-1">
-                    <Link
-                      to=""
-                      className="text-sm text-blue-400 hover:text-blue-500 focus:text-blue-500 transition-all"
-                    >
-                      {t("activity.cancel")}
-                    </Link>
-                  </div>
-
-                  {/* <div className="flex items-center gap-x-1">
-                    <Link
-                      to=""
-                      className="text-sm text-blue-400 hover:text-blue-500 focus:text-blue-500 transition-all"
-                    >
-                      {t("activity.resume")}
-                    </Link>
-                  </div> */}
-                </div>
-              </div>
-            </div>
+            {activities.length > 0 ? activities.map((activity) => (
+              <ActivityItemCard
+                activity={activity}
+                toggleActivityHandler={toggleActivityItem}
+                refs={contentRefs}
+              />
+            )): <Empty/>}
           </div>
         </div>
         <div className="border border-neutral-800 rounded-xl divide-y divide-neutral-800 overflow-hidden">

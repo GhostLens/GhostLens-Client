@@ -12,6 +12,7 @@ import AccountLayout from "./layouts/AccountLayout.tsx";
 import VerifyCode from "./pages/account/VerifyCode.tsx";
 import TwoFactor from "./pages/account/Twofactor.tsx";
 import Profile from "./pages/Profile.tsx";
+import Activity from "./pages/Activity.tsx";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
           {
             index: true,
             Component: Dashboard,
+          },
+          {
+            path: "activity",
+            Component: Activity,
           },
         ],
       },
